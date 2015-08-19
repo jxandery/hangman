@@ -15,7 +15,7 @@
       var revealedLetters = []
       for (var spaces = 0; spaces < secret.length; spaces++) {
         revealedLetters[spaces] = "_";
-      }
+        }
       console.log(revealedLetters);
     </script>
 
@@ -25,10 +25,14 @@
           if (guess == secret) {
             alert("Congratulations! Your guess is correct!");
           } else {
-            alert("Incorrect! " + revealedLetters + " Please guess again:");
+            for (var spaces = 0; spaces < secret.length; spaces++) {
+              if (secret[spaces] == guess) {
+                revealedLetters[spaces] = guess;
+            }
           }
+              alert("Incorrect! " + revealedLetters + " Please guess again:");
         console.log("Your guess is " + guess);
-
+        }
       }
     </script>
 
