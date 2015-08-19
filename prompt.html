@@ -19,8 +19,10 @@
       console.log(revealedLetters);
 
       while (guess !== secret) {
-        var guess = prompt("What's your guess?");
-          if (guess == secret) {
+        var guess = prompt("Guess a letter or click Cancel to stop playing");
+          if (guess == null) {
+            break;
+          } else if (guess == secret) {
             alert("Congratulations! " + guess + " is correct!");
           } else {
             for (var spaces = 0; spaces < secret.length; spaces++) {
