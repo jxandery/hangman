@@ -10,23 +10,23 @@
       var words = ["bird", "fish", "cat", "dog", "gerbil", "hamster"]
 
       var secret = words[Math.floor(Math.random() * words.length)];
-      console.log(secret);
+      var guessCount = 5
 
       var revealedLetters = []
       for (var spaces = 0; spaces < secret.length; spaces++) {
         revealedLetters[spaces] = "_";
         }
       console.log(revealedLetters);
-
-      while (guess !== secret) {
-        alert("You currently only have " + revealedLetters.join('') + " showing");
+      while (guess !== secret && guessCount !== 0) {
+        alert("You currently only have " + revealedLetters.join('') + " showing and " + guessCount + " guesses left");
         var guess = prompt("Guess a letter/word or click Cancel to stop playing");
         var guess = guess.toLowerCase();
           if (guess == null) {
             break;
           } else if (guess == secret) {
             alert("Congratulations! " + guess + " is correct!");
-          } else if (guess.length == 1 || guess.length == secret.length) {
+          } else if (guess.length == 0 || guess.length == 1 || guess.length == secret.length) {
+            guessCount -= 1;
             for (var spaces = 0; spaces < secret.length; spaces++) {
               if (secret[spaces] == guess) {
                 revealedLetters[spaces] = guess;
@@ -35,7 +35,7 @@
           } else {
             alert("Your guess is not the correct number of letters. Please guess a word with " + secret.length + " or enter only a single letter");
           }
-        console.log("Your guess is " + guess);
+        alert("Sorry! You've used up all of your guesses");
         }
     </script>
 
