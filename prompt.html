@@ -19,23 +19,23 @@
       console.log(revealedLetters);
 
       while (guess !== secret) {
-        var guess = prompt("Guess a letter or click Cancel to stop playing");
+        alert("You currently only have " + revealedLetters.join('') + " showing");
+        var guess = prompt("Guess a letter/word or click Cancel to stop playing");
           if (guess == null) {
             break;
-          } else if (guess.length !== 1) {
-            alert("Please enter only a single letter");
           } else if (guess == secret) {
             alert("Congratulations! " + guess + " is correct!");
-          } else {
+          } else if (guess.length == 1 || guess.length == secret.length) {
             for (var spaces = 0; spaces < secret.length; spaces++) {
               if (secret[spaces] == guess) {
                 revealedLetters[spaces] = guess;
             }
+            }
+          } else {
+            alert("Your guess is not the correct number of letters. Please guess a word with " + secret.length + " or enter only a single letter");
           }
-              alert("Incorrect! " + revealedLetters.join('') + " Please guess again:");
         console.log("Your guess is " + guess);
         }
-      }
     </script>
 
   </body>
