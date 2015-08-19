@@ -7,9 +7,17 @@
     <h1>Hangman!</h1>
 
     <script>
+      var words = ["bird", "fish", "cat", "dog", "gerbil", "hamster"]
+
+      var word = words[Math.floor(Math.random() * words.length)];
+      console.log(word);
+    </script>
+
+    <script>
       var guess = prompt("What's your guess?");
       console.log("Your guess is " + guess);
     </script>
+
   </body>
 </html>
 
