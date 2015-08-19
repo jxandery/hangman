@@ -22,6 +22,8 @@
         var guess = prompt("Guess a letter or click Cancel to stop playing");
           if (guess == null) {
             break;
+          } else if (guess.length !== 1) {
+            alert("Please enter only a single letter");
           } else if (guess == secret) {
             alert("Congratulations! " + guess + " is correct!");
           } else {
