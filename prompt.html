@@ -14,13 +14,16 @@
     </script>
 
     <script>
-      var guess = prompt("What's your guess?");
-        if (guess == secret) {
-          alert("Congratulations! Your guess is correct!");
-        } else {
-          prompt("Incorrect! Please guess again:");
-        }
-      console.log("Your guess is " + guess);
+      while (guess !== secret) {
+        var guess = prompt("What's your guess?");
+          if (guess == secret) {
+            alert("Congratulations! Your guess is correct!");
+          } else {
+            prompt("Incorrect! Please guess again:");
+          }
+        console.log("Your guess is " + guess);
+
+      }
     </script>
 
   </body>
