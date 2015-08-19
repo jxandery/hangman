@@ -21,6 +21,7 @@
       while (guess !== secret) {
         alert("You currently only have " + revealedLetters.join('') + " showing");
         var guess = prompt("Guess a letter/word or click Cancel to stop playing");
+        var guess = guess.toLowerCase();
           if (guess == null) {
             break;
           } else if (guess == secret) {
